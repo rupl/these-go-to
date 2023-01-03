@@ -1,0 +1,24 @@
+{
+  "name": "eleventy-starterkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eleventy.js",
+  "license": "ISC",
+  "scripts": {
+    "debug": "DEBUG=Eleventy* npx eleventy --serve",
+    "dev": "npx eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "postcss": "^8.4.19",
+    "postcss-csso": "^6.0.1",
+    "postcss-import": "^15.0.1"
+  },
+  "engines": {
+    "node": "18.12.1",
+    "npm": "9.2.0"
+  }
+}

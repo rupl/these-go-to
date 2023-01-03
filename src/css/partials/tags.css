@@ -1,0 +1,10 @@
+/**
+ * Tags
+ */
+[rel="tag"] {
+  font-family: monospace;
+}
+
+[rel="tag"]::before {
+  content: '#';
+}

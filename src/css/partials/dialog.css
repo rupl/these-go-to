@@ -1,0 +1,83 @@
+/**
+ * Dialog
+ *
+ * Default is neutral. Set data-status attribute for: info, warning, error
+ */
+:root {
+  --dialog-bg: white;
+  --dialog-color: black;
+  --dialog-button-bg: black;
+  --dialog-button-color: white;
+}
+
+/* Modal status colors */
+dialog[data-status="info"] {
+  --dialog-bg: #def;
+  --dialog-color: #036;
+  --dialog-button-bg: #37c;
+}
+dialog[data-status="warning"] {
+  --dialog-bg: #fed;
+  --dialog-color: #960;
+  --dialog-button-bg: #d90;
+}
+dialog[data-status="error"] {
+  --dialog-bg: #fee;
+  --dialog-color: #600;
+  --dialog-button-bg: #c33;
+}
+
+/**
+ * Dialog backdrop
+ *
+ * The backdrop inherits nothing and nothing inherits from it, meaning that the
+ * status selectors have to be defined a second time for the backdrop.
+ */
+dialog::backdrop {
+  background: #0009;
+  backdrop-filter: blur(8px);
+}
+dialog[data-status="info"]::backdrop {
+  background: #0127;
+}
+dialog[data-status="warning"]::backdrop {
+  background: #2107;
+}
+dialog[data-status="error"]::backdrop {
+  background: #1009;
+}
+
+/* Dialog window */
+dialog {
+  background: var(--dialog-bg);
+  color: var(--dialog-color);
+  border-radius: 5px;
+  position: relative;
+  padding-block: 1.5rem;
+  padding-inline-end: 2.75rem;
+}
+
+/* Close button */
+form[method="dialog"] .btn--close {
+  position: absolute;
+  top: .5rem;
+  right: .5rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background: none;
+}
+
+form[method="dialog"] .btn--close::after {
+  content: '❌';
+  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  left: .125rem;
+}
+
+form[method="dialog"] .btn--close:focus {
+  outline: none;
+  border-color: black;
+}

@@ -1,0 +1,33 @@
+@import 'partials/reset.css';
+@import 'partials/utilities.css';
+@import 'partials/document.css';
+@import 'partials/type.css';
+@import 'partials/nav.css';
+@import 'partials/home.css';
+@import 'partials/header.css';
+@import 'partials/tags.css';
+@import 'partials/search.css';
+@import 'partials/dialog.css';
+@import 'partials/footer.css';
+
+:root {
+  --color-dark: #090d14;
+  --color-button: #393d44;
+}
+
+body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--color-dark);
+  color: #eee;
+  font-size: 16px;
+  font-family: Fira Code, courier new, monospace;
+}
+
+main {
+  padding: 1rem;
+  letter-spacing: -.5px;
+}
+
+

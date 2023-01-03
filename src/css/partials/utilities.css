@@ -1,0 +1,55 @@
+.visually-hidden {
+  position: absolute!important;
+  clip: rect(1px,1px,1px,1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+.visually-hidden.focusable:focus {
+  position: static!important;
+  clip: auto;
+  overflow: visible;
+  height: auto;
+  width: auto;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1000;
+  transform: translateX(-50%);
+}
+.skip-link,
+.skip-link:link,
+.skip-link:visited {
+  background: #fff;
+  color: #000;
+  display: inline-block;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 500;
+  line-height: 1.7;
+  padding: 1px 10px 2px;
+  text-decoration: none;
+  border-radius: 0 0 10px 10px;
+}
+.skip-link:focus,
+.skip-link:active,
+.skip-link.focusable:focus,
+.skip-link.focusable:active {
+  outline: 0;
+  position: absolute!important;
+}
+
+.no-break {
+  white-space: nowrap;
+}
+
+.flex-flow {
+  --gap: 1.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--gap);
+}

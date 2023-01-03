@@ -1,0 +1,25 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# editorconfig.org
+
+root = true
+
+[*]
+# My preferences
+indent_style = space
+indent_size = 2
+
+# Smart defaults
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[_includes/*.html]
+insert_final_newline = false
+
+[_includes/maps/*.json]
+insert_final_newline = false
+
+[*.md]
+trim_trailing_whitespace = false

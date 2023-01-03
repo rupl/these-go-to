@@ -1,0 +1,28 @@
+/**
+ * Inline search
+ */
+input[name="search"] {
+  width: 100%;
+  font-size: 1.5rem;
+  color: #ddd;
+  background-color: black;
+  border: none;
+  outline: 2px solid #333;
+  margin: 1rem 0 0;
+  padding: .5rem;
+  transition: transform ease-out .1s;
+}
+input[name="search"]:focus {
+  outline: 3px solid white;
+  transform: scale(1.08);
+  transition-duration: .333s;
+}
+.tiles__search-summary {
+  min-height: 1em;
+  line-height: 1em;
+  margin-bottom: 1rem;
+}
+
+.tile--hidden {
+  display: none;
+}

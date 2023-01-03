@@ -1,0 +1,31 @@
+{
+  "dir": "ltr",
+  "lang": "en-US",
+  "name": "Ruppel Home Videos",
+  "short_name": "Ruppel Videos",
+  "description": "A collection of home videos for our family.",
+  "display": "minimal-ui",
+  "scope": "/",
+  "start_url": "/",
+  "background_color": "#090d14",
+  "theme_color": "#090d14",
+  "//": {
+    "icons": [
+      {
+        "src": "/img/pwa/app-icon@192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/pwa/app-icon@384x384.png",
+        "sizes": "384x384",
+        "type": "image/png"
+      },
+      {
+        "src": "/img/pwa/app-icon@512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+}

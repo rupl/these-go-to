@@ -1,0 +1,44 @@
+/**
+ * Home page
+ */
+.all-videos {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.all-videos .year {
+  font-size: 3em;
+  margin: 3rem 0 0 -0.5rem;
+  opacity: .27;
+}
+@media screen and (min-width: 868px) {
+  .all-videos .year {
+    margin-inline-start: -2rem;
+  }
+}
+
+.all-videos .year:first-of-type {
+  margin-block-start: 0;
+}
+.all-videos .hv + .hv {
+  margin-top: 1rem;
+}
+.all-videos .hv {
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media screen and (min-width: 480px) {
+  .all-videos .hv {
+    display: block;
+  }
+}
+
+.all-videos .hv__date,
+.all-videos .hv__title {
+  font-size: 1.25rem;
+}
+.all-videos .hv__people {
+  display: block;
+  opacity: .42;
+}

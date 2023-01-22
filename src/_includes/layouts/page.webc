@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title @html="title"></title>
+    <link webc:keep rel="preconnect" href="https://fonts.googleapis.com">
+    <link webc:keep rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link webc:keep rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;700&display=swap">
+    <style @raw="getCss(page.url)" webc:keep></style>
+    <script @raw="getJs(page.url, 'head')" webc:keep></script>
+    <link rel="manifest" href="/manifest.json">
+    <!--
+    <link rel="apple-touch-icon" sizes="192x192" href="/img/pwa/app-icon@192x192.png">
+    <link rel="apple-touch-startup-image" media="(min-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="/img/pwa/app-icon@192x192.png" />
+    -->
+    </head>
+  <body>
+
+    <skip-link href="#main-content"></skip-link>
+    <header role="banner" class="site-head">
+      <site-nav></site-nav>
+      <h1 class="page-title" @text="title"></h1>
+    </header>
+
+    <main id="main-content" @raw="content"></main>
+
+    <footer role="contentinfo" class="site-footer">
+      <div class="contents">
+        <span class="copyright" @html="`&#169 ${site.year} Name`"></span>
+        —
+        <span class="license"><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+      </div>
+    </footer>
+
+    <script @raw="getJs(page.url)" webc:keep></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  :root {
+    --color-dark: #0a1019;
+    --color-button: #393d44;
+    --color-link: #48f;
+    --color-link-v: #84f;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    max-width: 860px;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    background: var(--color-dark);
+    color: #eee;
+    font-size: 16px;
+    font-family: Fira Code, courier new, monospace;
+    font-weight: 300;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  a {
+    color: var(--color-link);
+  }
+
+  a:visited {
+    color: var(--color-link-v);
+  }
+
+  strong::before,
+  strong::after {
+    content: '**';
+  }
+
+  em::before,
+  em::after {
+    content: '_';
+  }
+
+  img,
+  video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  blockquote {
+    margin: 1rem 2rem 1rem 0;
+    padding-inline-start: 1.5rem;
+    border-inline-start: 1rem solid #fff3;
+    font-size: 1.25em;
+    font-style: italic;
+  }
+
+  ol[role=list],
+  ul[role=list] {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /**
+   * Hide elements from all users.
+   *
+   * Used for elements which should not be immediately displayed to any user. An
+   * example would be collapsible details that will be expanded with a click
+   * from a user. The effect of this class can be toggled with the jQuery show()
+   * and hide() functions.
+   */
+  .hidden {
+    display: none;
+  }
+
+  /**
+   * Hide elements visually, but keep them available for screen readers.
+   *
+   * Used for information required for screen reader users to understand and use
+   * the site where visual display is undesirable. Information provided in this
+   * manner should be kept concise, to avoid unnecessary burden on the user.
+   * "!important" is used to prevent unintentional overrides.
+   */
+  .visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    word-wrap: normal;
+  }
+
+  /**
+   * The .focusable class extends the .visually-hidden class to allow
+   * the element to be focusable when navigated to via the keyboard.
+   */
+  .visually-hidden.focusable:active,
+  .visually-hidden.focusable:focus {
+    position: static !important;
+    overflow: visible;
+    clip: auto;
+    width: auto;
+    height: auto;
+  }
+
+  /**
+   * Hide visually and from screen readers, but maintain layout.
+   */
+  .invisible {
+    visibility: hidden;
+  }
+</style>

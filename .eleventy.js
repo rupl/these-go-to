@@ -1,44 +1,45 @@
-const postcss = require('postcss');
-const postcssImport = require('postcss-import');
-const postcssMin = require('postcss-csso');
+const { EleventyRenderPlugin } = require('@11ty/eleventy');
+const EleventyWebcPlugin = require('@11ty/eleventy-plugin-webc');
 
-module.exports = config => {
-  // Pass these paths through to the dist folder.
-  config.addPassthroughCopy('./src/img/');
-  config.addPassthroughCopy('./src/manifest.json');
-  config.addPassthroughCopy('./src/service-worker.js');
+module.exports = eleventyConfig => {
+  //
+  // Pass through
+  //
+  eleventyConfig.addPassthroughCopy('./src/img/');
+  eleventyConfig.addPassthroughCopy('./src/manifest.json');
+  eleventyConfig.addPassthroughCopy('./src/service-worker.js');
 
-  // Define layout aliases. All paths relative to _includes
-  config.addLayoutAlias('default', 'layouts/default.html');
+  //
+  // Layouts
+  //
+  // All paths relative to _includes. To set default layout:
+  // @see src/_data/layout.js
+  //
+  eleventyConfig.addLayoutAlias('page', 'layouts/page.webc');
+
+  //
+  // WebC: globally register components dir (for DX)
+  //
+  eleventyConfig.addPlugin(EleventyWebcPlugin, {
+    components: 'src/_includes/components/**/*.webc',
+  });
+
+  //
+  // To render WebC in Markdown we need the `renderTemplate` block.
+  //
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   // Collections
-  // config.addCollection('COLLECTION', collection =>
+  // eleventyConfig.addCollection('COLLECTION', collection =>
   //   collection.getFilteredByGlob('src/DIR/_posts/*.md')
   //     .sort((a, b) => a.data.order - b.data.order));
-
-  // CSS pipeline
-  config.addTemplateFormats('css');
-  config.addExtension('css', {
-    outputFileExtension: 'css',
-    compile: async (content, path) => {
-      return async () => {
-        let output = await postcss([
-          postcssImport,
-          postcssMin,
-        ]).process(content, {
-          from: path,
-        });
-
-        return output.css;
-      }
-    }
-  });
 
   return {
     dir: {
       input: 'src',
       output: '_site'
     },
+    htmlTemplateEngine: 'webc',
     markdownTemplateEngine: 'liquid',
   };
 };

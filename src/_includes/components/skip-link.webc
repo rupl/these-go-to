@@ -1,0 +1,22 @@
+<a webc:keep webc:root
+  class="visually-hidden focusable skip-link"
+  @href="this.href || '#skip-link-needs-target'">Skip to content</a>
+
+<style webc:scoped>
+  /* Override the default focusable styles,
+  which force `static` with !important */
+  :host.visually-hidden.focusable:focus {
+    position: fixed !important;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    outline: none; /* its visible because of focus */
+    padding: .5rem 1rem;
+    color: var(--color-dark);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 5px 5px;
+    background-color: white;
+  }
+</style>

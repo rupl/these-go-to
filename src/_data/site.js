@@ -1,3 +1,5 @@
+// Put global site vars here
 module.exports = {
-  videoBaseUrl: process.env.VIDEO_BASE_URL || 'https://media.ruppel.me',
+  // Current year at build time
+  year: new Date().getFullYear(),
 }

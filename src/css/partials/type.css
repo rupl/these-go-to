@@ -26,10 +26,6 @@ ol:not([class]) p {
   margin: 0;
 }
 
-h1, h2, h3 {
-  font-family: Rockwell, monospace;
-}
-
 figure {
   margin: 0;
   line-height: 0;

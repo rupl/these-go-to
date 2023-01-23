@@ -1,6 +1,7 @@
 {
-  "name": "eleventy-starterkit",
-  "version": "1.0.0",
+  "name": "this-goes-to",
+  "version": "2.0.0",
+  "private": true,
   "description": "",
   "main": ".eleventy.js",
   "license": "ISC",
@@ -12,13 +13,11 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "postcss": "^8.4.19",
-    "postcss-csso": "^6.0.1",
-    "postcss-import": "^15.0.1"
+    "@11ty/eleventy": "^2.0.0-beta.1",
+    "@11ty/eleventy-plugin-webc": "^0.8.1"
   },
   "engines": {
-    "node": "18.12.1",
-    "npm": "9.2.0"
+    "node": "^v18.13.0",
+    "npm": "^9.3.1"
   }
 }

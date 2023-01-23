@@ -1,0 +1,39 @@
+<nav webc:keep webc:root class="nav">
+  <h2 class="visually-hidden">Main navigation</h2>
+  <ul class="nav__list" role="list">
+    <li :class="page.url === '/' ? 'is--active' : ''"><a href="/">Home</a></li>
+    <li :class="page.url.indexOf('/about') != -1 ? 'is--active' : ''"><a href="/about">About</a></li>
+  </ul>
+</nav>
+
+<style webc:scoped>
+  :host {}
+
+  :host ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  :host li {
+    display: block;
+    flex: 0 1 auto;
+    text-align: center;
+    border-bottom: 2px solid transparent;
+  }
+
+  :host li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1rem;
+    background: #fff1;
+  }
+
+  :host .is--active {
+    border-bottom-color: white;
+  }
+</style>

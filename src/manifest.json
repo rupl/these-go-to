@@ -1,14 +1,14 @@
 {
   "dir": "ltr",
   "lang": "en-US",
-  "name": "Ruppel Home Videos",
-  "short_name": "Ruppel Videos",
-  "description": "A collection of home videos for our family.",
+  "name": "You Site Name",
+  "short_name": "Short Name",
+  "description": "A description of your PWA.",
   "display": "minimal-ui",
   "scope": "/",
   "start_url": "/",
-  "background_color": "#090d14",
-  "theme_color": "#090d14",
+  "background_color": "#0a1019",
+  "theme_color": "#0a1019",
   "//": {
     "icons": [
       {
